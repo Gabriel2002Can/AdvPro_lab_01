@@ -12,17 +12,33 @@ namespace Section_2
         {
             //Starting Section 2
 
+            var UserPassword = "secret";
+
             Console.WriteLine("Type your password to enter the system.\nPassword: ");
 
             var UserGuess = Console.ReadLine();
 
-            if(UserGuess != "secret")
+            if(UserGuess != UserPassword)
             {
                 Console.WriteLine("\nThe password is wrong. Please try to log again.");
                 return;
             }
 
-            Console.WriteLine("\nYour User is authenticated.");
+            Console.WriteLine("\nYour User is authenticated.\n");
+
+            Console.WriteLine("Do you want to change your password? (Y/*)");
+
+            var UserChoice = Console.ReadLine();
+
+            if (UserChoice == "Y")
+            {
+                Console.WriteLine("Type your new password:");
+
+                UserPassword = Console.ReadLine();
+
+                Console.WriteLine($"Password altered successfully to {UserPassword}");
+            }
+
         }
     }
 }

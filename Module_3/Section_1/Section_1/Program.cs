@@ -43,19 +43,19 @@ namespace Section_1
                         throw new MyCustomException("The number of students must be greater than zero.");
                     }
 
-                    break; 
-                }
+                    break;
+            }
 
                 //Considering that my custom error is a derivation of the FormatException, it needs to go first
                 catch (MyCustomException e)
                 {
-                    Console.WriteLine($"{e.Message}");
-                }
+                Console.WriteLine($"{e.Message}");
+            }
                 catch (FormatException)
                 {
-                    Console.WriteLine("The input should be a valid number.");
-                }
-               
+                Console.WriteLine("The input should be a valid number.");
+            }
+
             }
 
             var Students = new string[studentNumber, 2];
@@ -85,23 +85,23 @@ namespace Section_1
 
                     string grade = Console.ReadLine();
 
-                    try
-                    {
-                        if (!IsDigitsOnly(grade))
+                        try
+                        {
+                            if (!IsDigitsOnly(grade))
                         {
                             throw new MyCustomException("The grade must be a numeric value.");
                         }
 
                         Students[s, 1] = grade;
-                        break; 
+                        break;
                     }
-                    catch (MyCustomException e)
-                    {
-                        Console.WriteLine($"{e.Message}");
-                    }
+                        catch (MyCustomException e)
+                        {
+                    Console.WriteLine($"{e.Message}");
                 }
+            }
 
-                Console.WriteLine("\n");
+                    Console.WriteLine("\n");
             }
 
             Console.WriteLine("\nRegistered Students:\n");
